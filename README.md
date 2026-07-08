@@ -14,44 +14,31 @@ Aplicación web para comparar Manifiestos de Embarque vs Conteos manuales de bul
 - pandas, openpyxl, xlrd
 - Python 3.14+
 
-## Deploy en Render (gratis)
+## Deploy en Streamlit Cloud (gratis, sin tarjeta)
 
 ### 1. Haz el repo público
-
-Si el repo es privado, Render no podrá verlo:
 
 ```
 GitHub → counting-tool repo → Settings → Danger Zone → Change visibility → Public
 ```
 
-### 2. Conecta Render con GitHub
+### 2. Despliega en Streamlit Cloud
 
-- Ve a [Render](https://render.com) y crea una cuenta (GitHub)
-- Dashboard → **Account Settings** → **GitHub** → **Manage GitHub** → **Connect account**
-- Dale acceso al repo `counting-tool`
-
-### 3. Crea el Web Service
-
-- Dashboard → **New +** → **Web Service**
-- Selecciona tu repo `pedroj1985/counting-tool`
-- Llena los campos:
+- Ve a [Streamlit Community Cloud](https://streamlit.io/cloud)
+- Inicia sesión con tu cuenta de **GitHub**
+- Click **"New app"** → **"Deploy from GitHub"**
+- Selecciona el repo `pedroj1985/counting-tool`
+- Configura:
 
 | Campo | Valor |
 |---|---|
-| **Name** | `counting-tool` |
 | **Branch** | `main` |
-| **Runtime** | `Python 3` |
-| **Build Command** | `pip install -r requirements.txt` |
-| **Start Command** | `streamlit run app.py --server.port $PORT` |
-| **Plan** | **Free** |
+| **Main file** | `app.py` |
+| **App URL** | `counting-tool.streamlit.app` |
 
-### 4. Deploy
+- Click **"Deploy"**
 
-- Click **Create Web Service**
-- Render instalará dependencias y desplegará automáticamente (~3 min)
-- Tu app quedará en: `https://counting-tool.onrender.com`
-
-> ⚠️ En el plan Free, Render duerme el servicio tras 15 min sin actividad. Al recargar la página tarda ~30s en despertar.
+Tu app estará disponible en **`https://counting-tool.streamlit.app`** en ~2 minutos. Sin tarjeta de crédito, sin tiempos de espera.
 
 ## Uso local
 
